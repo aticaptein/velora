@@ -1,0 +1,93 @@
+/* ==========================================================================
+   VELORA — design tokens
+   Palette "Lagoon, Salt & Saffron" · Fraunces (display) + Figtree (UI/body)
+   ========================================================================== */
+:root {
+  /* Core palette */
+  --lagoon-900: #0a2124;
+  --lagoon-800: #0e2b2e; /* ink */
+  --lagoon-700: #123f3f;
+  --lagoon-600: #1b5653;
+  --lagoon-400: #4f817b;
+  --seaglass: #9dbfb4;
+  --seaglass-200: #cfe0d9;
+  --salt: #eef0ea;
+  --salt-50: #f7f8f4;
+  --saffron: #e3a72f;
+  --saffron-300: #f0c768;
+  --fig: #5a2448;
+  --fig-700: #461a37;
+  --fig-200: #e9d3df;
+  --clay: #b5482f; /* errors / cancelled */
+  --white: #ffffff;
+
+  /* Semantic */
+  --bg: var(--salt);
+  --bg-raised: var(--salt-50);
+  --fg: var(--lagoon-800);
+  --fg-muted: #44605f; /* 6.3:1 on salt */
+  --line: color-mix(in oklab, var(--lagoon-800) 14%, transparent);
+  --line-strong: color-mix(in oklab, var(--lagoon-800) 28%, transparent);
+  --accent: var(--saffron);
+  --on-accent: var(--lagoon-900);
+  --focus: #1a73e8;
+  --danger: var(--clay);
+  --success: #2f6b4f;
+
+  /* Status */
+  --st-available: #2f6b4f;
+  --st-limited: #8a5a00;
+  --st-soldout: #5b5f63;
+  --st-cancelled: var(--clay);
+  --st-inactive: #6b6f73;
+
+  /* Type */
+  --font-display: "Fraunces Variable", "Fraunces", Georgia, "Times New Roman", serif;
+  --font-ui: "Figtree Variable", "Figtree", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Fluid type scale (min @ 360px → max @ 1600px) */
+  --step--1: clamp(0.84rem, 0.82rem + 0.1vw, 0.92rem);
+  --step-0: clamp(1rem, 0.97rem + 0.14vw, 1.1rem);
+  --step-1: clamp(1.18rem, 1.1rem + 0.35vw, 1.42rem);
+  --step-2: clamp(1.4rem, 1.24rem + 0.7vw, 1.9rem);
+  --step-3: clamp(1.75rem, 1.43rem + 1.4vw, 2.75rem);
+  --step-4: clamp(2.2rem, 1.6rem + 2.6vw, 4.1rem);
+  --step-5: clamp(2.75rem, 1.7rem + 4.6vw, 6.4rem);
+  --step-6: clamp(3.2rem, 1.6rem + 7.2vw, 9.6rem);
+
+  /* Space (spacious density) */
+  --sp-1: 0.25rem;
+  --sp-2: 0.5rem;
+  --sp-3: 0.75rem;
+  --sp-4: 1rem;
+  --sp-5: 1.5rem;
+  --sp-6: 2rem;
+  --sp-7: 3rem;
+  --sp-8: clamp(3rem, 2rem + 4vw, 6rem);
+  --sp-9: clamp(4.5rem, 3rem + 6vw, 9rem);
+
+  --gutter: clamp(1.15rem, 0.6rem + 2.4vw, 3rem);
+  --max: 1440px;
+  --max-text: 64ch;
+
+  /* Shape — radius encodes hierarchy: media (soft), controls (pill), panels (medium) */
+  --r-sm: 6px;
+  --r-md: 14px;
+  --r-lg: 28px;
+  --r-pill: 999px;
+  --r-arch: 50% 50% var(--r-md) var(--r-md) / 34% 34% var(--r-md) var(--r-md);
+
+  --shadow-float: 0 30px 60px -30px rgb(10 33 36 / 0.45), 0 10px 24px -16px rgb(10 33 36 / 0.3);
+
+  /* Motion tokens (mirrored in src/lib/motion.ts) */
+  --dur-micro: 180ms;
+  --dur-ui: 420ms;
+  --ease-velora: cubic-bezier(0.22, 1, 0.36, 1);
+
+  --header-h: 72px;
+  color-scheme: light;
+}
+
+@media (min-width: 1024px) {
+  :root { --header-h: 84px; }
+}
